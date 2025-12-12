@@ -1,13 +1,16 @@
 {
-  "name": "Repair for Dajo Miner PCB",
+  "name": "Kay Project",
   "version": "1.0.0",
   "builds": [
     {
       "chipFamily": "ESP32",
+      "flashMode": "dio",    // <--- 필수: 메모리 읽는 방식 (이게 0순위)
+      "flashFreq": "40m",    // <--- 추천: 메모리 읽는 속도 (안전빵)
+      "flashSize": "4m",     // <--- 선택: 대부분 4MB지만 적어주면 더 좋음
       "parts": [
         { "path": "bootloader.bin", "offset": 4096 },
         { "path": "partitions.bin", "offset": 32768 },
-        { "path": "boot_app0.bin", "offset": 57344 }, 
+        { "path": "boot_app0.bin", "offset": 57344 },
         { "path": "firmware.bin", "offset": 65536 }
       ]
     }
